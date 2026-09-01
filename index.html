@@ -62,7 +62,7 @@
   .section-lede{color:var(--muted);font-size:1.06rem;max-width:62ch;margin:.2rem 0 0}
   section{padding:clamp(56px,8vw,104px) 0}
   section.tight{padding-top:clamp(36px,5vw,60px)}
-  header.nav{position:sticky;top:0;z-index:50;background:rgba(250,248,252,.85);backdrop-filter:saturate(140%) blur(10px);-webkit-backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--line)}
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(250,248,252,.85);backdrop-filter:saturate(130%) blur(6px);-webkit-backdrop-filter:saturate(130%) blur(6px);border-bottom:1px solid var(--line)}
   .nav-inner{display:flex;align-items:center;justify-content:space-between;height:62px}
   .brand{font-family:var(--serif);font-weight:600;font-size:1.05rem;letter-spacing:-.01em;color:var(--ink);display:inline-flex;align-items:baseline}
   .brand span{color:var(--purple)}
@@ -308,6 +308,8 @@
   .hy-flow{animation:hyflow 7s linear infinite}
   @keyframes hyflow{from{transform:translateX(-240px)}to{transform:translateX(0)}}
   .hy-curve{fill:none;stroke:url(#flowGrad);stroke-width:2.4;stroke-linecap:round;opacity:.8}
+  .anim-paused, .anim-paused *{animation-play-state:paused!important}
+  .hero-flow, .runoff-svg, .foot-scene svg{will-change:transform;transform:translateZ(0)}
   .runoff-svg{overflow:hidden}
   .runoff-a{animation:runoffL 16s linear infinite}
   .runoff-b{animation:runoffR 24s linear infinite}
@@ -898,8 +900,14 @@
 <section id="consulting" class="tight reveal">
   <div class="wrap">
     <p class="eyebrow">Applied &amp; expert engagements</p>
-    <h2 class="section-title">Consulting &amp; testimony</h2>
+    <h2 class="section-title">Advisory, consulting &amp; testimony</h2>
     <div class="feature-cards">
+      <div class="fcard">
+        <div class="fk">Subject matter expert</div>
+        <h3>City of Fort Worth Data Center &amp; Infrastructure Commission</h3>
+        <p>Appointed subject matter expert for two of the Commission&#39;s four study areas, advising on the implications of data-center growth for Fort Worth.</p>
+        <ul><li>Water use and local resources</li><li>Land use and neighborhood impacts</li><li>Commission report due November 2026</li></ul>
+      </div>
       <div class="fcard">
         <div class="fk">Expert witness</div>
         <h3>Hydrologic modeling testimony</h3>
@@ -1088,6 +1096,14 @@
   if(searchBox){ searchBox.addEventListener('input', applyPubFilters); }
 
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* pause off-screen decorative animations (hero, wave dividers, footer) to keep scrolling smooth */
+  var scenes = Array.prototype.slice.call(document.querySelectorAll('.hero-flow, .runoff-svg, .foot-scene'));
+  if(!reduce && 'IntersectionObserver' in window && scenes.length){
+    var pio = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ en.target.classList.toggle('anim-paused', !en.isIntersecting); });
+    }, {rootMargin:'120px 0px 120px 0px'});
+    scenes.forEach(function(el){ el.classList.add('anim-paused'); pio.observe(el); });
+  }
   var revealEls = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
   if(reduce || !('IntersectionObserver' in window)){
     revealEls.forEach(function(el){ el.classList.add('in'); });
@@ -1096,8 +1112,12 @@
       entries.forEach(function(en){
         if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
       });
-    }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+    }, {threshold:0, rootMargin:'0px 0px -40px 0px'});
     revealEls.forEach(function(el){ io.observe(el); });
+    /* safety net: whatever happens, nothing stays hidden for long */
+    var revealAll = function(){ revealEls.forEach(function(el){ el.classList.add('in'); }); };
+    window.setTimeout(revealAll, 3000);
+    window.addEventListener('hashchange', revealAll);
   }
 
   function animateNum(el){
