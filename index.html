@@ -60,6 +60,7 @@
   h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.1;letter-spacing:-.01em;margin:0}
   h2.section-title{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:600;margin:0 0 .4rem;color:var(--ink)}
   .section-lede{color:var(--muted);font-size:1.06rem;max-width:62ch;margin:.2rem 0 0}
+  .pub-legend{font-size:.88rem;color:var(--muted);margin:-.4rem 0 .9rem}
   section{padding:clamp(56px,8vw,104px) 0}
   section.tight{padding-top:clamp(36px,5vw,60px)}
   header.nav{position:sticky;top:0;z-index:50;background:rgba(250,248,252,.85);backdrop-filter:saturate(130%) blur(6px);-webkit-backdrop-filter:saturate(130%) blur(6px);border-bottom:1px solid var(--line)}
@@ -456,7 +457,7 @@
       </div>
     </div>
     <div class="metrics" aria-label="Key metrics">
-      <div class="metric"><div class="num">1,600+</div><div class="lab">Citations &middot; Scholar</div></div>
+      <div class="metric"><div class="num">1,680+</div><div class="lab">Citations &middot; Scholar</div></div>
       <div class="metric"><div class="num">30</div><div class="lab">Peer-reviewed papers</div></div>
       <div class="metric"><div class="num">3</div><div class="lab">Open decision tools</div></div>
       <div class="metric"><div class="num">15+</div><div class="lab">Researchers mentored</div></div>
@@ -516,7 +517,7 @@
       <div class="tool">
         <span class="badge">Web app &middot; open source</span>
         <h3>PFAS Censoring-Aware Screening Tool (PFAS-CAST)</h3>
-        <p>Screens PFAS occurrence while correctly handling left-censored (non-detect) laboratory data, so values below detection limits do not bias the risk picture or the screening decisions that follow.</p>
+        <p>Screens PFAS occurrence while correctly handling left-censored (non-detect) laboratory data, so values below detection limits do not bias the risk picture or the screening decisions that follow. Implements the censoring-aware estimators of publication 30 (<em>Cell Reports Sustainability</em>, 2026).</p>
         <div class="tool-foot">
           <a class="launch" href="https://kharelg100.github.io/pfas-cast/" target="_blank" rel="noopener">Launch tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
           <a class="doi" href="https://doi.org/10.5281/zenodo.23577354" target="_blank" rel="noopener">doi:10.5281/zenodo.23577354</a>
@@ -525,7 +526,7 @@
       <div class="tool">
         <span class="badge">Web app &middot; open source</span>
         <h3>PFAS Reach-Bracketing Tool</h3>
-        <p>Brackets likely PFAS concentrations along a river reach under data scarcity, a practical aid for screening contamination and framing monitoring and permit decisions.</p>
+        <p>Brackets likely PFAS concentrations along a river reach under data scarcity, a practical aid for screening contamination and framing monitoring and permit decisions. Implements the method of publication 29 (<em>Water Research X</em>, 2026).</p>
         <div class="tool-foot">
           <a class="launch" href="https://kharelg100.github.io/pfas-reach-bracketing-tool/" target="_blank" rel="noopener">Launch tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
           <a class="doi" href="https://doi.org/10.5281/zenodo.18937739" target="_blank" rel="noopener">doi:10.5281/zenodo.18937739</a>
@@ -627,6 +628,7 @@
     <p class="section-lede">A complete, current account of publications, funding, mentoring, and service. Filter the publication list by theme, or expand any section for the full detail.</p>
 
     <div class="subhead">Peer-reviewed publications <span class="count">&middot; 30</span></div>
+    <p class="pub-legend">&dagger; led by a supervised graduate student &middot; Google Scholar (November 2026): 1,686 citations, h-index 16, i10-index 21</p>
     <input class="pubsearch" id="pubSearch" type="search" placeholder="Search title, author, or journal..." aria-label="Search publications">
     <div class="filters" id="pubFilters" role="group" aria-label="Filter publications by theme">
       <button class="filter active" data-filter="all">All</button>
@@ -640,14 +642,14 @@
     <ol class="pubs" id="pubList">
       <li class="pub" data-topic="quality methods policy"><span class="pub-num">30</span><div class="pub-body"><p class="pub-title">Censoring-aware models quantify systematic underestimation of PFAS occurrence in U.S. drinking-water monitoring</p><p class="pub-authors"><b>Kharel G</b>, Kirilenko AP, Harvey OR, Zou CB</p><p class="pub-meta"><span class="venue">Cell Reports Sustainability</span> &middot; <span>2026</span> &middot; <a class="doi" href="https://doi.org/10.1016/j.crsus.2026.100893" target="_blank" rel="noopener">DOI</a></p></div></li>
       <li class="pub" data-topic="quality methods"><span class="pub-num">29</span><div class="pub-body"><p class="pub-title">Machine-readable reach bracketing reveals persistent PFAS inputs from headwater tributaries</p><p class="pub-authors"><b>Kharel G</b>, Harvey OR</p><p class="pub-meta"><span class="venue">Water Research X</span> &middot; <span>2026</span> &middot; <a class="doi" href="https://doi.org/10.1016/j.wroa.2026.100574" target="_blank" rel="noopener">DOI</a></p></div></li>
-      <li class="pub" data-topic="quality methods hydrology"><span class="pub-num">28</span><div class="pub-body"><p class="pub-title">Watershed-scale green infrastructure reduces storm-driven <em>Escherichia coli</em> extremes: tail-aware modeling and dependence-robust inference for bacterial water-quality management</p><p class="pub-authors">Gould HA, <b>Kharel G</b>, Jeong J, Chakraborty TK, Asare PT, Nice MS</p><p class="pub-meta"><span class="venue">Cleaner Water</span> &middot; <span>2026</span> &middot; <a class="doi" href="https://doi.org/10.1016/j.clwat.2026.100283" target="_blank" rel="noopener">DOI</a></p></div></li>
-      <li class="pub" data-topic="quality methods"><span class="pub-num">27</span><div class="pub-body"><p class="pub-title">Handling left-censored PFAS data in surface-water reconnaissance: a reproducible workflow applied to ten sites in the Trinity River headwaters, Texas</p><p class="pub-authors">Asare PT, <b>Kharel G</b>, Nice MS, Lavy BL, Birmingham M, Harvey OR</p><p class="pub-meta"><span class="venue">PLOS Water</span> &middot; <span>2026</span> &middot; <a class="doi" href="https://doi.org/10.1371/journal.pwat.0000554" target="_blank" rel="noopener">DOI</a></p></div></li>
+      <li class="pub" data-topic="quality methods hydrology"><span class="pub-num">28&dagger;</span><div class="pub-body"><p class="pub-title">Watershed-scale green infrastructure reduces storm-driven <em>Escherichia coli</em> extremes: tail-aware modeling and dependence-robust inference for bacterial water-quality management</p><p class="pub-authors">Gould HA, <b>Kharel G</b>, Jeong J, Chakraborty TK, Asare PT, Nice MS</p><p class="pub-meta"><span class="venue">Cleaner Water</span> &middot; <span>2026</span> &middot; <a class="doi" href="https://doi.org/10.1016/j.clwat.2026.100283" target="_blank" rel="noopener">DOI</a></p></div></li>
+      <li class="pub" data-topic="quality methods"><span class="pub-num">27&dagger;</span><div class="pub-body"><p class="pub-title">Handling left-censored PFAS data in surface-water reconnaissance: a reproducible workflow applied to ten sites in the Trinity River headwaters, Texas</p><p class="pub-authors">Asare PT, <b>Kharel G</b>, Nice MS, Lavy BL, Birmingham M, Harvey OR</p><p class="pub-meta"><span class="venue">PLOS Water</span> &middot; <span>2026</span> &middot; <a class="doi" href="https://doi.org/10.1371/journal.pwat.0000554" target="_blank" rel="noopener">DOI</a></p></div></li>
       <li class="pub" data-topic="climate hydrology"><span class="pub-num">26</span><div class="pub-body"><p class="pub-title">Seasonal inflow shifts and increasing hot-dry stress for Eagle Mountain Lake reservoir, Texas: SWAT modeling with downscaled CMIP6 daily climate and observed operations</p><p class="pub-authors"><b>Kharel G</b>, Ayejoto DA, Lavy BL, Birmingham M, Chakraborty TK, Nice MS, Asare P</p><p class="pub-meta"><span class="venue">Hydrology</span> &middot; <span>2026</span> &middot; <a class="doi" href="https://doi.org/10.3390/hydrology13020063" target="_blank" rel="noopener">DOI</a></p></div></li>
       <li class="pub" data-topic="quality"><span class="pub-num">25</span><div class="pub-body"><p class="pub-title">Physicochemical characterization, ecological risk assessment and spatial distribution of microplastics in Bangladesh's largest coral reef systems</p><p class="pub-authors">Nice MS, Chakraborty TK, <b>Kharel G</b>, Netema BN, Islam KR, Chowdhury P, Debnath PC, Rahman MS, Rayhan MA, Zaman S, Ghosh GC</p><p class="pub-meta"><span class="venue">Physics and Chemistry of the Earth</span> &middot; <span>2025</span> &middot; <a class="doi" href="https://doi.org/10.1016/j.pce.2025.104164" target="_blank" rel="noopener">DOI</a></p></div></li>
       <li class="pub" data-topic="quality"><span class="pub-num">24</span><div class="pub-body"><p class="pub-title">Microplastic contaminants in eggs: identification, characterization, and potential risks</p><p class="pub-authors">Rayhan MA, Debnath PC, <b>Kharel G</b>, Islam KR, Sarker S, Biswas A, Hasan MJ, Asif SMH, Rahman MS, Netema BN, Nice MS, Chowdhury P, Chakraborty TK, Zaman S, Ghosh GC</p><p class="pub-meta"><span class="venue">Food Bioscience</span> &middot; <span>2025</span> &middot; <a class="doi" href="https://doi.org/10.1016/j.fbio.2025.108163" target="_blank" rel="noopener">DOI</a></p></div></li>
       <li class="pub" data-topic="quality"><span class="pub-num">23</span><div class="pub-body"><p class="pub-title">Unveiling the hidden pollutants in the indoor environment: focus on microplastic pollution and its related risks in the educational institutions of a megacity, Bangladesh</p><p class="pub-authors">Chakraborty TK, Debnath PC, <b>Kharel G</b>, Netema BN, Nice MS, Islam KR, Chowdhury P, Rahman MS, Zaman S, Ghosh GC, Halder M, Hossain N</p><p class="pub-meta"><span class="venue">Environmental Pollution</span> &middot; <span>2025</span> &middot; <a class="doi" href="https://doi.org/10.1016/j.envpol.2025.126831" target="_blank" rel="noopener">DOI</a></p></div></li>
       <li class="pub" data-topic="hydrology"><span class="pub-num">22</span><div class="pub-body"><p class="pub-title">Biochar impacts on soil water dynamics: knowns, unknowns, and research directions</p><p class="pub-authors">Acharya BS, Dodla S, Wang JJ, Pavuluri K, Darapuneni M, Dattamudi S, Maharjan B, <b>Kharel G</b></p><p class="pub-meta"><span class="venue">Biochar</span> &middot; <span>2024</span> &middot; <a class="doi" href="https://doi.org/10.1007/s42773-024-00323-4" target="_blank" rel="noopener">DOI</a></p></div></li>
-      <li class="pub" data-topic="climate"><span class="pub-num">21</span><div class="pub-body"><p class="pub-title">Evaluating non-stationarity in precipitation intensity-duration-frequency curves for the Dallas-Fort Worth Metroplex, Texas, USA</p><p class="pub-authors">Ghimire B, <b>Kharel G</b>, Gebremichael E, Cheng L</p><p class="pub-meta"><span class="venue">Hydrology</span> &middot; <span>2023</span> &middot; <a class="doi" href="https://doi.org/10.3390/hydrology10120229" target="_blank" rel="noopener">DOI</a></p></div></li>
+      <li class="pub" data-topic="climate"><span class="pub-num">21&dagger;</span><div class="pub-body"><p class="pub-title">Evaluating non-stationarity in precipitation intensity-duration-frequency curves for the Dallas-Fort Worth Metroplex, Texas, USA</p><p class="pub-authors">Ghimire B, <b>Kharel G</b>, Gebremichael E, Cheng L</p><p class="pub-meta"><span class="venue">Hydrology</span> &middot; <span>2023</span> &middot; <a class="doi" href="https://doi.org/10.3390/hydrology10120229" target="_blank" rel="noopener">DOI</a></p></div></li>
       <li class="pub" data-topic="hydrology climate"><span class="pub-num">20</span><div class="pub-body"><p class="pub-title">Potential hydrological impacts of planting switchgrass on marginal rangelands in the South Central Great Plains</p><p class="pub-authors"><b>Kharel G</b>, Zhong Y, Will RE, Zhang T, Zou CB</p><p class="pub-meta"><span class="venue">Water</span> &middot; <span>2022</span> &middot; <a class="doi" href="https://doi.org/10.3390/w14193087" target="_blank" rel="noopener">DOI</a></p></div></li>
       <li class="pub" data-topic="methods hydrology"><span class="pub-num">19</span><div class="pub-body"><p class="pub-title">Unmanned aerial vehicles in hydrology and water management: applications, challenges, and perspectives</p><p class="pub-authors">Acharya BS, Bhandari M, Bandini F, Pizarro A, Perks M, Joshi DR, Wang S, Dogwiler T, Ray RL, <b>Kharel G</b>, Sharma S</p><p class="pub-meta"><span class="venue">Water Resources Research</span> &middot; <span>2021</span> &middot; <a class="doi" href="https://doi.org/10.1029/2021WR029925" target="_blank" rel="noopener">DOI</a></p></div></li>
       <li class="pub" data-topic="quality"><span class="pub-num">18</span><div class="pub-body"><p class="pub-title">Acid mine drainage from coal mining in the United States: an overview</p><p class="pub-authors">Acharya BS, <b>Kharel G</b></p><p class="pub-meta"><span class="venue">Journal of Hydrology</span> &middot; <span>2020</span> &middot; <a class="doi" href="https://doi.org/10.1016/j.jhydrol.2020.125061" target="_blank" rel="noopener">DOI</a></p></div></li>
@@ -791,9 +793,9 @@
     <details class="disc">
       <summary>University &amp; professional service <span class="sumcount">committees, advising, panels</span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
       <div class="disc-body"><ul>
-        <li>Academic Advisor &amp; Coordinator, Department of Environmental and Geological Sciences, TCU <span class="meta">2021-present</span></li>
-        <li>Undergraduate Council, TCU <span class="meta">Member &middot; 2023-present</span></li>
-        <li>Department Advisory Committee, Environmental &amp; Sustainability Sciences, TCU <span class="meta">Member &middot; 2021-present</span></li>
+        <li>Undergraduate Academic Advisor (advises 20+ majors per year), Department of Environmental and Geological Sciences, TCU <span class="meta">2021-present</span></li>
+        <li>Undergraduate Council, TCU <span class="meta">Member &middot; 2023-2026</span></li>
+        <li>Department Advisory Committee, Department of Environmental and Geological Sciences, TCU <span class="meta">Member &middot; 2021-2026</span></li>
         <li>Undergraduate Curriculum Committee, College of Science &amp; Engineering, TCU <span class="meta">Member &middot; 2020-2022</span></li>
         <li>Diversity, Equity, and Inclusion, College of Science &amp; Engineering, TCU <span class="meta">Member &middot; 2020-2022</span></li>
         <li>Instructor Search Committee, Environmental &amp; Sustainability Sciences, TCU <span class="meta">Member &middot; 2022 and 2019-2020</span></li>
@@ -914,7 +916,7 @@
         <div class="fk">Subject matter expert</div>
         <h3>City of Fort Worth Data Center &amp; Infrastructure Commission</h3>
         <p>Appointed subject matter expert for two of the Commission&#39;s four study areas, advising on the implications of data-center growth for Fort Worth.</p>
-        <ul><li>Water use and local resources</li><li>Land use and neighborhood impacts</li><li>Commission report due November 2026</li></ul>
+        <ul><li>Water use and local resources</li><li>Land use and neighborhood impacts</li><li>Commission report delivered November 2026</li></ul>
       </div>
       <div class="fcard">
         <div class="fk">Expert witness</div>
